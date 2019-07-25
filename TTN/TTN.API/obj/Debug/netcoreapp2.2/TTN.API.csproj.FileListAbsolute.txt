@@ -1,0 +1,14 @@
+D:\dotnetprojects\TTN\TTN.API\bin\Debug\netcoreapp2.2\TTN.API.deps.json
+D:\dotnetprojects\TTN\TTN.API\bin\Debug\netcoreapp2.2\TTN.API.runtimeconfig.json
+D:\dotnetprojects\TTN\TTN.API\bin\Debug\netcoreapp2.2\TTN.API.runtimeconfig.dev.json
+D:\dotnetprojects\TTN\TTN.API\bin\Debug\netcoreapp2.2\TTN.API.dll
+D:\dotnetprojects\TTN\TTN.API\bin\Debug\netcoreapp2.2\TTN.API.pdb
+D:\dotnetprojects\TTN\TTN.API\obj\Debug\netcoreapp2.2\TTN.API.csprojAssemblyReference.cache
+D:\dotnetprojects\TTN\TTN.API\obj\Debug\netcoreapp2.2\TTN.API.csproj.CoreCompileInputs.cache
+D:\dotnetprojects\TTN\TTN.API\obj\Debug\netcoreapp2.2\TTN.API.RazorAssemblyInfo.cache
+D:\dotnetprojects\TTN\TTN.API\obj\Debug\netcoreapp2.2\TTN.API.RazorAssemblyInfo.cs
+D:\dotnetprojects\TTN\TTN.API\obj\Debug\netcoreapp2.2\TTN.API.AssemblyInfoInputs.cache
+D:\dotnetprojects\TTN\TTN.API\obj\Debug\netcoreapp2.2\TTN.API.AssemblyInfo.cs
+D:\dotnetprojects\TTN\TTN.API\obj\Debug\netcoreapp2.2\TTN.API.RazorTargetAssemblyInfo.cache
+D:\dotnetprojects\TTN\TTN.API\obj\Debug\netcoreapp2.2\TTN.API.dll
+D:\dotnetprojects\TTN\TTN.API\obj\Debug\netcoreapp2.2\TTN.API.pdb
