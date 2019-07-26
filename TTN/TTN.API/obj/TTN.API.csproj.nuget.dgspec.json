@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dotnetprojects\\TTN\\TTN.API\\TTN.API.csproj": {}
+    "D:\\dotnetprojects\\ttn\\ttn.api\\TTN.API.csproj": {}
   },
   "projects": {
-    "D:\\dotnetprojects\\TTN\\TTN.API\\TTN.API.csproj": {
+    "D:\\dotnetprojects\\ttn\\ttn.api\\TTN.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dotnetprojects\\TTN\\TTN.API\\TTN.API.csproj",
+        "projectUniqueName": "D:\\dotnetprojects\\ttn\\ttn.api\\TTN.API.csproj",
         "projectName": "TTN.API",
-        "projectPath": "D:\\dotnetprojects\\TTN\\TTN.API\\TTN.API.csproj",
+        "projectPath": "D:\\dotnetprojects\\ttn\\ttn.api\\TTN.API.csproj",
         "packagesPath": "C:\\Users\\Misbahuddin Aamer\\.nuget\\packages\\",
-        "outputPath": "D:\\dotnetprojects\\TTN\\TTN.API\\obj\\",
+        "outputPath": "D:\\dotnetprojects\\ttn\\ttn.api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

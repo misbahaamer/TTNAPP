@@ -3,6 +3,7 @@
   margin: 20px auto;
 }
 .mat-elevation-z8{
+  width: 95%;
   margin: 30px auto;
   overflow-x: scroll;
 }
@@ -63,7 +64,7 @@ th.mat-column-actions, td.mat-column-actions {
 }
 
 .mat-form-field{
-  margin: 10px 50px -35px 0px;
+  margin: 10px 50px -35px 30px;
   width: 50%;
 }
 

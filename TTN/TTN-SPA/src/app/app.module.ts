@@ -1,3 +1,4 @@
+import { EmployeeComponent } from './employee/employee.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +23,8 @@ import { AddTraineeComponent } from './trainee/addtrainee.component';
 import { TraineeService } from './trainee/trainee.service';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,12 +35,16 @@ import { TraineeService } from './trainee/trainee.service';
     AddSubmissionsComponent,
     TraineeComponent,
     AddTraineeComponent,
+    EmployeeComponent
+    
+    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: 'employee', component: EmployeeComponent},
       { path: 'employees', component: EmployeesComponent},
       { path: 'submissions', component: SubmissionsComponent},
       { path: 'trainee', component: TraineeComponent},

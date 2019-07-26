@@ -1,9 +1,11 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTable, MatTableDataSource, MatDialog, MatDialogConfig } from '@angular/material';
-import { EXAMPLE_DATA, EmployeesItem } from './employees-datasource';
+import { EmployeesItem } from './employees-datasource';
 import { SelectionModel } from '@angular/cdk/collections';
 import { AddEmployeesComponent } from './addemployees.component';
 import { EmployeeService } from './employees.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-employees',
@@ -17,9 +19,9 @@ export class EmployeesComponent implements AfterViewInit {
   @ViewChild(MatTable, {static: false}) table: MatTable<EmployeesItem>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['select', 'id', 'firstname', 'lastname', 'personalPhoneNumber',
-  'marketingPhoneNumber', 'personalEmail', 'marketingEmail', 'status', 'dateofBirth', 'actions'];
-  dataSource = new MatTableDataSource<EmployeesItem>(EXAMPLE_DATA);
+  displayedColumns = ['select', 'id', 'name', 'personalPhone',
+  'marketingPhone', 'personalEmail', 'marketingEmail', 'status', 'actions'];
+  dataSource = new MatTableDataSource<EmployeesItem>(this.service.EXAMPLE_DATA);
   selection = new SelectionModel<EmployeesItem>(true, []);
 
   removeSelectedRows() {
@@ -28,11 +30,11 @@ export class EmployeesComponent implements AfterViewInit {
        console.log(this.dataSource.data.findIndex(d => d === item));
        this.dataSource.data.splice(index, 1);
        this.dataSource = new MatTableDataSource<EmployeesItem>(this.dataSource.data);
-      setTimeout(() => {
+       setTimeout(() => {
         this.ngAfterViewInit();
       });
      });
-     this.selection = new SelectionModel<EmployeesItem>(true, []);
+    this.selection = new SelectionModel<EmployeesItem>(true, []);
   }
 
   applyFilter(filterValue: string) {
@@ -61,6 +63,7 @@ export class EmployeesComponent implements AfterViewInit {
   }
 
   constructor(private service: EmployeeService,
+              private http: HttpClient,
               public dialog: MatDialog) {}
 
   openDialog(): void {
@@ -101,13 +104,13 @@ export class EmployeesComponent implements AfterViewInit {
           this.dataSource.data.splice(index, 1, this.service.form.value);
           this.dataSource = new MatTableDataSource<EmployeesItem>(this.dataSource.data);
         });
-      this.service.form.reset();
-      setTimeout(() => {
+        this.service.form.reset();
+        setTimeout(() => {
         this.ngAfterViewInit();
       });
-      this.selection = new SelectionModel<EmployeesItem>(true, []);
+        this.selection = new SelectionModel<EmployeesItem>(true, []);
     }
-    this.selection = new SelectionModel<EmployeesItem>(true, []);
+      this.selection = new SelectionModel<EmployeesItem>(true, []);
     });
   }
 
@@ -117,3 +120,4 @@ export class EmployeesComponent implements AfterViewInit {
     this.table.dataSource = this.dataSource;
   }
 }
+

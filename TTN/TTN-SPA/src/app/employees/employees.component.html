@@ -1,3 +1,4 @@
+
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
@@ -30,21 +31,17 @@
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="firstname">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
-      <td mat-cell *matCellDef="let row">{{row.firstname}}</td>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
     </ng-container>
-    <ng-container matColumnDef="lastname">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
-      <td mat-cell *matCellDef="let row">{{row.lastname}}</td>
-    </ng-container>
-    <ng-container matColumnDef="personalPhoneNumber">
+    <ng-container matColumnDef="personalPhone">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Personal Phone Number</th>
-      <td mat-cell *matCellDef="let row">{{row.personalPhoneNumber}}</td>
+      <td mat-cell *matCellDef="let row">{{row.personalPhone}}</td>
     </ng-container>
-    <ng-container matColumnDef="marketingPhoneNumber">
+    <ng-container matColumnDef="marketingPhone">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Marketing Phone Number</th>
-      <td mat-cell *matCellDef="let row">{{row.marketingPhoneNumber}}</td>
+      <td mat-cell *matCellDef="let row">{{row.marketingPhone}}</td>
     </ng-container>
     <ng-container matColumnDef="personalEmail">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Personal Email</th>
@@ -58,11 +55,6 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
       <td mat-cell *matCellDef="let row">{{row.status}}</td>
     </ng-container>
-    <ng-container matColumnDef="dateofBirth">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</th>
-      <td mat-cell *matCellDef="let row">{{row.dateofBirth}}</td>
-    </ng-container>
-
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Edit</th>
         <td mat-cell *matCellDef="let row">

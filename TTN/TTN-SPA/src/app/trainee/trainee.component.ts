@@ -4,7 +4,7 @@ import { EXAMPLE_DATA2, TraineeItem } from './trainee-datasource';
 import { SelectionModel } from '@angular/cdk/collections';
 import { AddTraineeComponent } from './addtrainee.component';
 import { TraineeService } from './trainee.service';
-import { EXAMPLE_DATA, EmployeesItem } from '../employees/employees-datasource';
+import { EmployeesItem } from '../employees/employees-datasource';
 
 @Component({
   selector: 'app-trainee',
@@ -30,11 +30,11 @@ export class TraineeComponent implements AfterViewInit {
        console.log(this.dataSource.data.findIndex(d => d === item));
        this.dataSource.data.splice(index, 1);
        this.dataSource = new MatTableDataSource<TraineeItem>(this.dataSource.data);
-      setTimeout(() => {
+       setTimeout(() => {
         this.ngAfterViewInit();
       });
      });
-     this.selection = new SelectionModel<TraineeItem>(true, []);
+    this.selection = new SelectionModel<TraineeItem>(true, []);
   }
 
   transferSelectedRowstoEmployees() {
@@ -45,11 +45,11 @@ export class TraineeComponent implements AfterViewInit {
        EXAMPLE_DATA.push(array[0]);
        console.log(this.employeedataSource.data);
        this.dataSource = new MatTableDataSource<TraineeItem>(this.dataSource.data);
-      setTimeout(() => {
+       setTimeout(() => {
         this.ngAfterViewInit();
       });
      });
-     this.selection = new SelectionModel<TraineeItem>(true, []);
+    this.selection = new SelectionModel<TraineeItem>(true, []);
   }
 
   applyFilter(filterValue: string) {
@@ -118,13 +118,13 @@ export class TraineeComponent implements AfterViewInit {
           this.dataSource.data.splice(index, 1, this.service.form.value);
           this.dataSource = new MatTableDataSource<TraineeItem>(this.dataSource.data);
         });
-      this.service.form.reset();
-      setTimeout(() => {
+        this.service.form.reset();
+        setTimeout(() => {
         this.ngAfterViewInit();
       });
-      this.selection = new SelectionModel<TraineeItem>(true, []);
+        this.selection = new SelectionModel<TraineeItem>(true, []);
     }
-    this.selection = new SelectionModel<TraineeItem>(true, []);
+      this.selection = new SelectionModel<TraineeItem>(true, []);
     });
   }
 

@@ -1,35 +1,49 @@
+import { EmployeesItem } from './employees-datasource';
 import { FormGroup, FormControl, Validators, ValidationErrors } from '@angular/forms';
+import { OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 
-export class EmployeeService {
-
+export class EmployeeService implements OnInit {
+    array: EmployeesItem[];
+    public EXAMPLE_DATA: EmployeesItem[];
+    employees: any[];
+    constructor(private http: HttpClient) { }
   form: FormGroup = new FormGroup({
-    firstname: new FormControl('', Validators.required),
-    lastname: new FormControl('', Validators.required),
-    personalPhoneNumber: new FormControl('', [Validators.minLength(10), Validators.required]),
-    marketingPhoneNumber: new FormControl('', [Validators.minLength(10), Validators.required]),
+    name: new FormControl('', Validators.required),
+    personalPhone: new FormControl('', [Validators.minLength(10), Validators.required]),
+    marketingPhone: new FormControl('', [Validators.minLength(10), Validators.required]),
     personalEmail: new FormControl('', Validators.email),
     marketingEmail: new FormControl('', Validators.email),
     status: new FormControl('', [Validators.required, this.requireMatch]),
-    dateofBirth: new FormControl('', Validators.required),
     id: new FormControl('', Validators.required)
   });
 
 initializeFormGroup() {
     this.form.setValue({
-      firstname: '',
-      lastname: '',
-      personalPhoneNumber: '',
-      marketingPhoneNumber: '',
+      name: '',
+      personalPhone: '',
+      marketingPhone: '',
       personalEmail: '',
       marketingEmail: '',
       status: '',
-      dateofBirth: '',
       id: ''
     });
   }
+  ngOnInit() {
+    this.getEmployees();
+  }
+  getEmployees() {
+    this.http.get('http://localhost:5000/api/employees').subscribe((response: Array<EmployeesItem>) => {
+      this.EXAMPLE_DATA = this.array.concat(response);
+      console.log(this.EXAMPLE_DATA);
+    }, error => {
+      console.log(error);
+    });
+  }
 
-  populateForm(employee) {
+
+populateForm(employee) {
     this.form.setValue(employee);
   }
 

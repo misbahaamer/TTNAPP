@@ -15,6 +15,7 @@ export class AddEmployeesComponent {
         onSubmit() {
             if (this.service.form.valid) {
                 this.dialogRef.close();
+                console.log(this.service.getEmployees());
             }
           }
 

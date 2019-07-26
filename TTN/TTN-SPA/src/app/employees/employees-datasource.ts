@@ -1,30 +1,23 @@
+import { EmployeeService } from './employees.service';
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
+
 // TODO: Replace this with your own data model type
 export interface EmployeesItem {
-  firstname: string;
-  lastname: string;
-  personalPhoneNumber: number;
-  marketingPhoneNumber: number;
+  name: string;
+  personalPhone: number;
+  marketingPhone: number;
   personalEmail: string;
   marketingEmail: string;
   status: string;
-  dateofBirth: string;
   id: number;
 }
 
 // TODO: replace this with real data from your application
-export const EXAMPLE_DATA: EmployeesItem[] = [
-  {id: 1, firstname: 'Darab', lastname: 'Kiyani', personalPhoneNumber: 8607710436, marketingPhoneNumber: 86014123131, personalEmail:
-  'darab.kiyani@uconn.edu', marketingEmail: 'darabkiyani5@gmail.com', status: 'OPT', dateofBirth: '09/03/1990'},
-  {id: 2, firstname: 'Misbah', lastname: 'Aamer', personalPhoneNumber: 12311123232, marketingPhoneNumber: 12123121231,
-  personalEmail: 'maad@yahoo.com', marketingEmail: 'misbah@gmail.com', status: 'OPT', dateofBirth: '09/07/1989'},
-  {id: 3, firstname: 'Harris', lastname: 'Masood', personalPhoneNumber: 1231232112, marketingPhoneNumber: 12312312313,
-  personalEmail: 'harad@yahoo.com', marketingEmail: 'harris@gmail.com', status: 'Citizen', dateofBirth: '09/09/1970'},
-];
+
 
 /**
  * Data source for the Employees view. This class should
@@ -32,11 +25,12 @@ export const EXAMPLE_DATA: EmployeesItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export default class EmployeesDataSource extends DataSource<EmployeesItem> {
-  data: EmployeesItem[] = EXAMPLE_DATA;
+  data: EmployeesItem[] = this.service.EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor() {
+  constructor(
+    private service: EmployeeService ) {
     super();
   }
 
@@ -86,11 +80,10 @@ export default class EmployeesDataSource extends DataSource<EmployeesItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'firstname': return compare(a.firstname, b.firstname, isAsc);
-        case 'lastname': return compare(a.lastname, b.lastname, isAsc);
+        case 'name': return compare(a.name, b.name, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
-        case 'personalPhoneNumber': return compare(+a.id, +b.id, isAsc);
-        case 'marketingPhoneNumber': return compare(+a.id, +b.id, isAsc);
+        case 'personalPhone': return compare(+a.id, +b.id, isAsc);
+        case 'marketingPhone': return compare(+a.id, +b.id, isAsc);
         case 'personalEmail': return compare(a.personalEmail, b.personalEmail, isAsc);
         case 'marketingEmail': return compare(a.marketingEmail, b.marketingEmail, isAsc);
         default: return 0;
