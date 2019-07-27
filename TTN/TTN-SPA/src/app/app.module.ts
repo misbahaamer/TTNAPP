@@ -1,3 +1,4 @@
+import { MainNavComponent } from './main-nav/main-nav.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,13 +11,16 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,
    MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule,
    MatInputModule, MatDialogModule, MatAutocompleteModule } from '@angular/material';
+import { CandidatesTableComponent } from './candidates/candidates-table/candidates-table.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CandidatesTableComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
