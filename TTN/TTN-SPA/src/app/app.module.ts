@@ -16,11 +16,14 @@ import { CandidatesTableComponent } from './candidates/candidates-table/candidat
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    CandidatesTableComponent,
-    MainNavComponent
+
+    MainNavComponent,
+
+    CandidatesTableComponent
   ],
   imports: [
     BrowserModule,

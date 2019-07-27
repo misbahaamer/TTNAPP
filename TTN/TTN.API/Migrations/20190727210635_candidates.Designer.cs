@@ -9,8 +9,8 @@ using TTN.API.Data;
 namespace TTN.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190724233638_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20190727210635_candidates")]
+    partial class candidates
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace TTN.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("TTN.API.Models.Employee", b =>
+            modelBuilder.Entity("TTN.API.Models.Candidate", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace TTN.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Candidates");
                 });
 #pragma warning restore 612, 618
         }

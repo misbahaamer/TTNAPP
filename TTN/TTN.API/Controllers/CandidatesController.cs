@@ -10,10 +10,10 @@ namespace TTN.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeesController : ControllerBase
+    public class CandidatesController : ControllerBase
     {
         private readonly DataContext _context;
-        public EmployeesController(DataContext context)
+        public CandidatesController(DataContext context)
         {
             _context = context;
 
@@ -22,16 +22,16 @@ namespace TTN.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetEmployees()
         {
-            var employees = await _context.Employees.ToListAsync();
-            return Ok(employees);
+            var candidates = await _context.Candidates.ToListAsync();
+            return Ok(candidates);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEmployee(int id)
         {
-            var employe = await _context.Employees.FirstOrDefaultAsync(x => x.Id == id);
-            return Ok(employe);
+            var candidate = await _context.Candidates.FirstOrDefaultAsync(x => x.Id == id);
+            return Ok(candidate);
         }
 
         // POST api/values

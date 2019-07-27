@@ -4,3 +4,17 @@
     padding-top: 50px;
   }
 }
+.candidates-table-parent{
+  position: absolute;
+  top:8%;
+  width: 100%;
+  justify-content: center;
+}
+.candidates-table{
+  position: relative;
+  
+  
+  
+  
+  
+}

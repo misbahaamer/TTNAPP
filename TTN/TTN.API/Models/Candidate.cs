@@ -1,6 +1,6 @@
 namespace TTN.API.Models
 {
-    public class Employee
+    public class Candidate
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TTN.API.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class candidates : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Employees",
+                name: "Candidates",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -22,14 +22,14 @@ namespace TTN.API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employees", x => x.Id);
+                    table.PrimaryKey("PK_Candidates", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Employees");
+                name: "Candidates");
         }
     }
 }
