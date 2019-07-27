@@ -1,54 +1,27 @@
-import { EmployeeComponent } from './employee/employee.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component';
-import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule,
    MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule,
    MatInputModule, MatDialogModule, MatAutocompleteModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EmployeesComponent } from './employees/employees.component';
-import { AddEmployeesComponent } from './employees/addemployees.component';
-import { EmployeeService } from './employees/employees.service';
-import { SubmissionsComponent } from './submissions/submissions.component';
-import { AddSubmissionsComponent } from './submissions/addsubmissions.component';
-import { SubmissionService } from './submissions/submissions.service';
-import { TraineeComponent } from './trainee/trainee.component';
-import { AddTraineeComponent } from './trainee/addtrainee.component';
-import { TraineeService } from './trainee/trainee.service';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MainNavComponent,
-    EmployeesComponent,
-    AddEmployeesComponent,
-    SubmissionsComponent,
-    AddSubmissionsComponent,
-    TraineeComponent,
-    AddTraineeComponent,
-    EmployeeComponent
-    
-    
+    AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: 'employee', component: EmployeeComponent},
-      { path: 'employees', component: EmployeesComponent},
-      { path: 'submissions', component: SubmissionsComponent},
-      { path: 'trainee', component: TraineeComponent},
-    ]),
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -66,8 +39,8 @@ import { TraineeService } from './trainee/trainee.service';
     MatAutocompleteModule,
     ReactiveFormsModule
   ],
-  providers: [EmployeeService, SubmissionService, TraineeService],
+  providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [AddEmployeesComponent, AddSubmissionsComponent, AddTraineeComponent]
+  entryComponents: []
 })
 export class AppModule { }
