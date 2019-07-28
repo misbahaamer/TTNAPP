@@ -1,25 +1,67 @@
+<div class="search-div">
+  <button mat-raised-button color="primary">
+    Add New Candidate
+  </button>
+  <mat-form-field class="search-form-field" floatLabel = "never">
+    <input matInput [(ngModel)]="searchKey" placeholder="Search Candidate" autocomplete="off" (keyup)="applyFilter()"> 
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click) = "onSearchCLear()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
 <div class="mat-elevation-z8">
-  <table mat-table class="full-width-table" matSort aria-label="Elements">
+  <table mat-table  [dataSource]="dataSource" class="full-width-table"  aria-label="Elements" matSort>
     <!-- Id Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let candidate">{{candidate.id}}</td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let candidate">{{candidate.name}}</td>
     </ng-container>
+
+    <!-- status Column -->
+    <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+        <td mat-cell *matCellDef="let candidate">{{candidate.status}}</td>
+      </ng-container>
+
+      <!-- marketingPhone Column -->
+    <ng-container matColumnDef="marketingPhone">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header>Marketing Phone</th>
+        <td mat-cell *matCellDef="let candidate">{{candidate.marketingPhone}}</td>
+      </ng-container>
+
+      <!-- marketingEmail Column -->
+    <ng-container matColumnDef="marketingEmail">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header>Marketing Email</th>
+        <td mat-cell *matCellDef="let candidate">{{candidate.marketingEmail}}</td>
+      </ng-container>
+
+      <!-- personalPhone Column -->
+    <ng-container matColumnDef="personalPhone">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header>Personal Phone</th>
+        <td mat-cell *matCellDef="let row">{{row.personalPhone}}</td>
+      </ng-container>
+
+      <!-- personalEmail Column -->
+    <ng-container matColumnDef="personalEmail">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header>Personal Email</th>
+        <td mat-cell *matCellDef="let row">{{row.personalEmail}}</td>
+      </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
   <mat-paginator #paginator
-      [length]="dataSource?.data.length"
+      showFirstLastButtons
       [pageIndex]="0"
-      [pageSize]="50"
-      [pageSizeOptions]="[5, 10, 20, 30]">
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 15, 20]">
   </mat-paginator>
 </div>
